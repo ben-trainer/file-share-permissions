@@ -23,6 +23,11 @@
 - Windows Server 2022
 - Windows 10 Pro (22H2)
 
+<h2>Prerequisites</h2>
+
+  - [Installing and Configuring Active Directory in Azure](https://github.com/ben-trainer/Azure-Active-Directory-Home-Lab)
+  - [Understanding DNS in Azure](https://github.com/ben-trainer/dns-testing/tree/main)
+
 <h2>File Permissions Configuration Steps</h2>
 
 To start we will log in to our DC-1 VM and go to Server Manager > Active Directory Users and Computers > Employees, and select a user to be our client.
