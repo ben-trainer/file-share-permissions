@@ -4,9 +4,7 @@
 <img src="https://i.imgur.com/xlYwPUf.png" alt="Permissions Photo"/>
 </p>
 
-<h1>Understanding File Permissions</h1>
-This lab will use my previous Active Directory Lab. Here is a brief overview of what will be accomplished in the lab. 
-
+<h1>Objectives</h1>
 - Create some sample file shares with various permissions
 - Attempt to access file shares as a normal end user / client.
 - Create an Accountants Security Group, assign permissions, and test access.
