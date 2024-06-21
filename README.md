@@ -1,14 +1,14 @@
 # file-share-permissions
 
 <p align="center">
-<img src="https://i.imgur.com/xlYwPUf.png" alt="Permissions Photo"/>
+<img src="https://i.imgur.com/xlYwPUf.png" height="40%" width="40%" alt="Permissions Photo"/>
 </p>
 
 <h1>Objectives</h1>
+
 - Create some sample file shares with various permissions
 - Attempt to access file shares as a normal end user / client.
 - Create an Accountants Security Group, assign permissions, and test access.
-
 
 <br />
 
@@ -30,74 +30,129 @@
 
 <h2>File Permissions Configuration Steps</h2>
 
-To start we will log in to our DC-1 VM and go to Server Manager > Active Directory Users and Computers > Employees, and select a user to be our client.
+<p>
+Log in to our DC-1 VM and go to Server Manager > Active Directory Users and Computers > Employees, and select a user to be our client.
+</p>
 
 <p>
-<img src="https://i.imgur.com/cQNF8HH.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/cQNF8HH.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
 
-On the DC-1 VM we will create a few files to be shared. Open file explorer > This PC > C:, and create folders named: “read access” “write access” “no access” “accounting”
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
+
+<p>
+On the DC-1 VM create a few files to be shared. Open file explorer > This PC > C:, and create folders named: “read access” “write access” “no access” “accounting”
+</p>
+
+<p>
+<img src="https://i.imgur.com/azoPBZj.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
+
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
+
+<p>
+After the files are created share the files on the domain by right clicking read-access and write access file > Properties > Sharing, type in “domain users” add > share. 
   
-<img src="https://i.imgur.com/azoPBZj.png" height="80%" width="80%" alt="Permissions Steps"/>
+  - Assigning the proper permissions based on the file name we set. (read-access, read only, write-access, read and write access)
 </p>
+
 <p>
-After the files are created we will share the files on the domain by right clicking read-access and write access file > Properties > Sharing, type in “domain users” add > share. Assigning the proper permissions based on the file name we set. (read-access, read only, write-access, read and write access)
+<img src="https://i.imgur.com/gnJvbKa.png" height="40%" width="40%" alt="Permissions Steps"/>
 </p>
-<br />
+
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
 
 <p>
-<img src="https://i.imgur.com/gnJvbKa.png" height="80%" width="80%" alt="Permissions Steps"/>
+The no-access file we will do the same process but type in “domain admins” add > share
 </p>
-<p>
-For our no-access file we will do the same process but type in “domain admins” add > share
-
-<br />
 
 <p>
-<img src="https://i.imgur.com/EjvlgV6.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/EjvlgV6.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
 
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
+
+<p>
 Skipping accounting, we will go over to our CLIENT-1 VM and view our new file shares by typing “\\dc-1” hit enter and the folders should appear.
-
+</p>
   
-<img src="https://i.imgur.com/mVtlynG.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/mVtlynG.png" height="40%" width="40%" alt="Permissions Steps"/>
 </p>
-<p>
-When trying to open the no access file from the client side we do not have access.
 
-</p>
-<br />
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
 
 <p>
-<img src="https://i.imgur.com/itF98ns.png" height="80%" width="80%" alt="Permissions Steps"/>
+Attempt to open the "no access" file from the client side
 
-To further test our permissions, In our DC-1 VM we will create a text file under This PC > C: > read-access. Then on our CLIENT-1 VM we will attempt to create a text file within the same read-access file and should have our access denied.
+  - Access should be denied
+</p>
 
-<img src="https://i.imgur.com/kAHU8d9.png" height="80%" width="80%" alt="Permissions Steps"/>
+<p>
+<img src="https://i.imgur.com/itF98ns.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
+
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
+
+<p>
+To further test permissions, In the DC-1 VM create a text file under This PC > C: > read-access. 
+  
+-  On the CLIENT-1 VM attempt to create a text file within the same read-access file and it should deny access.
+</p>
+
+<img src="https://i.imgur.com/kAHU8d9.png" height="40%" width="40%" alt="Permissions Steps"/>
 </p>
 <p>
+Create an accountants security group and provision specific users with access. 
+  
+  - On our DC-1 VM we will go to Server Manager > Active Directory Users and Computers, right click our domain, create a new resource group (organizational purposes)
+  - Within that resource group, create a new group and name it accountants. 
+</p>
 
-<br />
+<p
+<img src="https://i.imgur.com/fnbmrN1.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
 
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
 
-Next we will create an accountants security group and provision specific users with access. On our DC-1 VM we will go to Server Manager > Active Directory Users and Computers, right click our domain, create a new resource group (organizational purposes) and within that resource group we will Create a new group and name it accountants. 
+<p>
+Within the accountants folder, start sharing the file, type in accountants, and assign Read/Write access and share.
+</p>
 
-<img src="https://i.imgur.com/fnbmrN1.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/EV9Isww.png" height="40%" width="40%" alt="Permissions Steps"/>
 
-Within our accountants folder we can start sharing the file and type in accountants with Read/Write access and share.
+The Demo.waxos account won’t have access to the group so it can be fixed by assigning that account to the accountants group. 
 
-<img src="https://i.imgur.com/EV9Isww.png" height="80%" width="80%" alt="Permissions Steps"/>
+  - Under Server Manager > Active Directory Users and Computers > _SECURITY_GROUPS > Members > Add. Enter the user’s name, check name, and add the user. This should be the result.
+<p>
+<img src="https://i.imgur.com/LNe3bJb.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
 
-The Demo.waxos account won’t have access to the group so we will fix that by assigning that account to the accountants group. Under Server Manager > Active Directory Users and Computers > _SECURITY_GROUPS > Members > Add. Enter the user’s name, check name, and add the user. This should be the result.
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
 
-<img src="https://i.imgur.com/LNe3bJb.png" height="80%" width="80%" alt="Permissions Steps"/>
+<p>
+Log off of the CLIENT-1 VM and re sign in using the proper account and domain name before it.
+</p>
 
-Next we will log off of the CLIENT-1 VM and re sign in using the proper account and domain name before it.
+<p>
+<img src="https://i.imgur.com/AVsG159.png" height="40%" width="40%" alt="Permissions Steps"/>
+</p>
 
-<img src="https://i.imgur.com/AVsG159.png" height="80%" width="80%" alt="Permissions Steps"/>
+<p><strong>.</strong></p>
+<p><strong>.</strong></p>
 
+<p>
 Now within the CLIENT-1 VM while logged into demo.waxos we were able to successfully access and create a text file to add to the file share.
+</p>
 
-
-<img src="https://i.imgur.com/e6TpmM1.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/e6TpmM1.png" height="40%" width="40%" alt="Permissions Steps"/>
 
 
 <h2>Lessons Learned </h2>
