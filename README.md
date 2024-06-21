@@ -152,8 +152,10 @@ Log off of the CLIENT-1 VM and re sign in using the proper account and domain na
 Now within the CLIENT-1 VM while logged into demo.waxos we were able to successfully access and create a text file to add to the file share.
 </p>
 
-<img src="https://i.imgur.com/e6TpmM1.png" height="40%" width="40%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/e6TpmM1.png" height="80%" width="80%" alt="Permissions Steps"/>
+
+
 
 
 <h2>Lessons Learned </h2>
-This lab helped me learn that creating a file share with Active Directory setup is extremely intuitive, as I have been using Windows for years it is very straightforward and can be quickly learned just by using simple navigation techniques. I ran into small problems provisioning the demo.waxos user because I had an extra space and also forgot to click check names, but I quickly was able to troubleshoot the problem by attempting it again without the space and clicking the proper button before applying.
+In this lab, it helped me learn that creating a file share with Active Directory setup is extremely intuitive, as I have been using Windows for years it is very straightforward and can be quickly learned just by using simple navigation techniques. I ran into small problems provisioning the demo.waxos user because I had an extra space and also forgot to click check names, but I quickly was able to troubleshoot the problem by attempting it again without the space and clicking the proper button before applying.
