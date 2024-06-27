@@ -1,4 +1,4 @@
-# file-share-permissions
+# File Share Permissions
 
 <p align="center">
 <img src="https://i.imgur.com/xlYwPUf.png" height="40%" width="40%" alt="Permissions Photo"/>
